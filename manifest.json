@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "10Miss",
+  "description": "This extension will notify you when there's an unresolved 10Bis order.",
+  "version": "1.0",
+
+  "background": {
+    "scripts": ["event_page.js"],
+    "persistent": false
+  },
+
+  "permissions": [
+    "storage",
+    "webNavigation",
+    "alarms",
+    "notifications"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.10bis.co.il/Checkout*"],
+      "js": ["content.js"]
+    }
+  ]
+}
